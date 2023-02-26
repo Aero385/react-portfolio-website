@@ -33,6 +33,10 @@ import bolt from '../assets/bolt.png';
 import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
+import St from '../assets/St.png';
+import St1 from '../assets/St1.png';
+import St2 from '../assets/St2.png';
+
 
 export default {
   email,
@@ -68,4 +72,7 @@ export default {
   nb,
   skype,
   spotify,
+  St,
+  St1,
+  St2,
 };
