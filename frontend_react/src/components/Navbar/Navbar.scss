@@ -5,13 +5,13 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
   background-color: rgba(255, 255, 255, 0.25); 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   position: fixed;
-  z-index: 2;
+  z-index: 20;
 }
 
 .app__navbar-logo {
@@ -20,12 +20,12 @@
   align-items: center;
 
   img {
-    width: 200px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
 
     @media screen and (min-width: 2000px) {
-      width: 400px;
-      height: 100px;
+      width: 130px;
+      height: 130px;
     }
   }
 }
@@ -59,7 +59,7 @@
       flex-direction: column;
       
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 700;
       transition: all 0.3s ease-in-out;
 
       &:hover {
@@ -79,6 +79,10 @@
   }
 }
 
+.list {
+  z-index: 50;
+}
+
 .app__navbar-menu {
   width: 35px;
   height: 35px;
@@ -88,6 +92,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--secondary-color);
+
 
   svg {
     width: 70%;

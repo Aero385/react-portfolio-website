@@ -36,6 +36,14 @@
   }
 }
 
+.app__sidebar {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+
 .copyright {
   width: 100%;
   padding: 2rem 0 0;
@@ -103,49 +111,102 @@
   align-items: center;
   flex-direction: column;
 
-  padding: 1rem;
 
-  div {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--white-color);
-    margin: 0.25rem 0;
-    border: 1px solid var(--lightGray-color);
-
+  a {
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    margin: 20px;
+    font-size: 1.5em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0 25px 35px rgb(0, 0, 0, 0.1);
+    transition: background 0.25s;
 
-    transition: all 0.3s ease-in-out;
-
-    svg {
-      width: 15px;
-      height: 15px;
-      color: var(--gray-color);
+    &:hover.facebook{
+      background: #1316d1;
     }
 
-    &:hover {
-      background-color: var(--secondary-color);
-      border-color: var(--secondary-color);
-
-      svg {
-        color: var(--white-color);
-      }
+    &:hover.instagram{
+      background: #e4405f;
     }
 
-    @media screen and (min-width: 2000px) {
-      width: 70px;
-      height: 70px;
-
-      margin: 0.5rem 0;
-
-      svg {
-        width: 30px;
-        height: 30px;
-      }
+    &:hover.linkedin{
+      background: #1d67f0;
     }
+
+    .fa{
+      transition: 0.7s;
+      pointer-events: none; 
+    }
+
   }
+
+  a:hover .fa-facebook {
+    color: #fff;
+    transform: scale(1.5)translateZ(50px);
+  }
+
+  a:hover .fa-linkedin-square{
+    color: #fff;
+    transform: scale(1.5)translateZ(50px);
+  }
+
+  a:hover .fa-instagram {
+    color: #fff;
+    transform: scale(1.75)translateZ(50px);
+  }
+
+
+
+
+  // div {
+  //   width: 40px;
+  //   height: 40px;
+  //   border-radius: 50%;
+  //   background-color: var(--white-color);
+  //   margin: 0.25rem 0;
+  //   border: 1px solid var(--lightGray-color);
+
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+
+  //   transition: all 0.3s ease-in-out;
+
+  //   svg {
+  //     width: 15px;
+  //     height: 15px;
+  //     color: var(--gray-color);
+  //   }
+
+  //   &:hover {
+  //     background-color: var(--secondary-color);
+  //     border-color: var(--secondary-color);
+
+  //     svg {
+  //       color: var(--white-color);
+  //     }
+  //   }
+
+  //   @media screen and (min-width: 2000px) {
+  //     width: 70px;
+  //     height: 70px;
+
+  //     margin: 0.5rem 0;
+
+  //     svg {
+  //       width: 30px;
+  //       height: 30px;
+  //     }
+  //   }
+  // }
 }
 
 .app__navigation {
