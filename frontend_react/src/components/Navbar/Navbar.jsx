@@ -10,7 +10,9 @@ const Navbar = () => {
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
-        LOGO
+        <a href='/' >
+          <img src={images.Anilan} alt="logo" />
+        </a>
       </div>
       <ul className='app__navbar-links'>
         {['home', 'about', 'work', 'skills', 'contact'].map((item) => (
@@ -29,6 +31,7 @@ const Navbar = () => {
               <motion.div
                 whileInView={{x: [300, 0]}}
                 transition={{duration: 0.85, ease: 'easeOut'}}
+                className='list'
               >
                 <HiX onClick={() => setToggle(false)}/>
                 <ul>

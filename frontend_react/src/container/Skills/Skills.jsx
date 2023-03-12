@@ -1,8 +1,10 @@
 
 import React, {useState, useEffect} from 'react';
 import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 import { AppWrap } from '../../wrapper/AppWrap';
+import { MotionWrap } from '../../wrapper/MotionWrap';
 import { urlFor, client } from '../../client';
 import './Skills.scss';
 
@@ -12,7 +14,7 @@ const Skills = () => {
   const [skills, setSkills] = useState([])
 
   useEffect(() => {
-    const query = '*[_type == "experience"]';
+    const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
     client.fetch(query)
@@ -32,7 +34,7 @@ const Skills = () => {
       <h2 className='head-text'>Skills & experience</h2>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
-          {skills.map((skill) => (
+          {skills?.map((skill) => (
             <motion.div
               whileInView={{opacity: [0, 1]}}
               transition={{duration: 0.5}}
@@ -46,9 +48,48 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+        <motion.div className='app__skills-exp'>
+            {experience?.map((experience) => (
+              <motion.div
+                className='app__skills-exp-item'
+                key={experience.year}
+              >
+                <div className='app__skills-exp-year'>
+                  <p className='bold-text'>{experience.year}</p>
+                </div>
+                <motion.div className='app__skills-exp-works'>
+                {experience.works.map((work) => (
+                  <>
+                    <motion.div
+                      whileInView={{ opacity: [0, 1] }}
+                      transition={{ duration: 0.5 }}
+                      className="app__skills-exp-work  my-anchor-element"
+                      data-tip
+                      data-for={work.name}
+                      key={work.name}
+                    >
+                      <h4 className="bold-text">{work.name}</h4>
+                      <p className="p-text">{work.company}</p>
+                    </motion.div>
+                    <Tooltip
+                      anchorSelect=".my-anchor-element"
+                      id={work.name}
+                      effect="solid"
+                      arrowColor="#fff"
+                      className="skills-tooltip"
+                      globalEventOff="click"
+                    >
+                      {work.desc}
+                    </Tooltip>
+                  </>
+                ))}
+                </motion.div>
+              </motion.div>
+            ))}
+        </motion.div>
       </div>
     </>
   );
 }
 
-export default Skills;
+export default AppWrap( MotionWrap(Skills, 'app__skills'), 'skills', 'app__whitebg');

@@ -1,0 +1,115 @@
+.app__sidebar {
+  position: fixed;
+  width: 60px;
+  height: 400px;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #99d0fd;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 350px;
+
+    li {
+      position: relative;
+      width: 60px;
+      height: 70px;
+      list-style: none;
+
+      &.active .sidebar-icon {
+        transform: translateX(-30px);
+        color: blue;
+        font-weight: 500;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        font-weight: 500;
+        z-index: 3;
+
+        .sidebar-icon {
+          position: relative;
+          display: block;
+          font-size: 1.2em;
+          transition: 0.5s;
+          color: black;
+        }
+      }
+    }
+
+    li:nth-child(1).active ~ .indicator {
+      transform: translateY(calc(70px * 0));
+    }
+    
+    li:nth-child(2).active ~ .indicator {
+      transform: translateY(calc(70px * 1));
+    }
+    li:nth-child(3).active ~ .indicator {
+      transform: translateY(calc(70px * 2));
+    }
+    li:nth-child(4).active ~ .indicator {
+      transform: translateY(calc(70px * 3));
+    }
+    li:nth-child(5).active ~ .indicator {
+      transform: translateY(calc(70px * 4));
+    }
+  }
+}
+
+.indicator {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #99d0fd;
+  border-radius: 50%;
+  z-index: 2;
+  left: -35px;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -28px;
+  left: 5px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 18px 15px #99d0fd;
+}
+
+.indicator::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: -28px;
+  left: 5px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 18px -15px #99d0fd;
+}
+
+@media screen and (max-width: 450px) {
+  .app__sidebar {
+    display: none;
+}
+}
+
+
+    
+             

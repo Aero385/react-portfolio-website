@@ -36,9 +36,24 @@ import spotify from '../assets/spotify.png';
 import St from '../assets/St.png';
 import St1 from '../assets/St1.png';
 import St2 from '../assets/St2.png';
+import Anilan from '../assets/blackLOGO.png';
+import phoneCall from '../assets/phone-call.png';
+import gmail from '../assets/gmail.png';
+
+import home from '../assets/home.png';
+import about from '../assets/about.png';
+import work from '../assets/work.png';
+import skills from '../assets/skills.svg';
+import contact from '../assets/contact.png';
 
 
 export default {
+  home,
+  about,
+  work,
+  skills,
+  contact,
+  Anilan,
   email,
   mobile,
   api,
@@ -63,6 +78,7 @@ export default {
   about03,
   about04,
   profile,
+  gmail,
   circle,
   logo,
   adidas,
@@ -72,6 +88,7 @@ export default {
   nb,
   skype,
   spotify,
+  phoneCall,
   St,
   St1,
   St2,
