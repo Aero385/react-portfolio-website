@@ -25,18 +25,12 @@ const Header = () => {
         className='app__header-info'
       >
         <div className='app__header-badge'>
-          {/* <div className='badge-cmp app__flex'>
-            <span>👋</span>
-            <div style={{marginLeft: 20}}>
-              <p className='p-text'>Hello, I am</p>
-              <h1 className='head-text'>Stanislav</h1>
-            </div>
-          </div>
-
-          <div className='tag-cmp app__flex'>
-            <p className='p-text'>Web developer</p>
-            <p className='p-text'>Freelancer</p>
-          </div> */}
+          <div className='header-static-txt'>Hello, I am </div>
+          <ul className='header-dynamic-txt'>
+            <li><span>Stanislav</span></li>
+            <li><span>Developer</span></li>
+            <li><span>Freelancer</span></li>
+          </ul>
         </div>
       </motion.div>
       <motion.div

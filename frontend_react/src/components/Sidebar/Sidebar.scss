@@ -5,11 +5,12 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background-color: #99d0fd;
+  background-color: transparent;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 
   ul {
     display: flex;
@@ -41,6 +42,14 @@
         font-weight: 500;
         z-index: 3;
 
+        &:hover {
+          transform: scale(1.1);
+          
+          .sidebar-icon {
+            color: rgb(40, 160, 230);
+          }
+        }
+
         .sidebar-icon {
           position: relative;
           display: block;
@@ -70,39 +79,40 @@
   }
 }
 
-.indicator {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  background-color: #99d0fd;
-  border-radius: 50%;
-  z-index: 2;
-  left: -35px;
-}
+    // .indicator {
+    //   position: absolute;
+    //   width: 70px;
+    //   height: 70px;
+    //   background-color: #99d0fd;
+    //   border-radius: 50%;
+    //   z-index: 2;
+    //   left: -35px;
+    //   transition: transform 0.5s ease-out; /* Added transition here */
+    // }
 
-.indicator::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  top: -28px;
-  left: 5px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 18px 15px #99d0fd;
-}
+    // .indicator::before {
+    //   content: "";
+    //   position: absolute;
+    //   width: 30px;
+    //   height: 30px;
+    //   top: -28px;
+    //   left: 5px;
+    //   background-color: transparent;
+    //   border-radius: 50%;
+    //   box-shadow: 18px 15px #99d0fd;
+    // }
 
-.indicator::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  bottom: -28px;
-  left: 5px;
-  background-color: transparent;
-  border-radius: 50%;
-  box-shadow: 18px -15px #99d0fd;
-}
+    // .indicator::after {
+    //   content: "";
+    //   position: absolute;
+    //   width: 30px;
+    //   height: 30px;
+    //   bottom: -28px;
+    //   left: 5px;
+    //   background-color: transparent;
+    //   border-radius: 50%;
+    //   box-shadow: 18px -15px #99d0fd;
+    // }
 
 @media screen and (max-width: 450px) {
   .app__sidebar {

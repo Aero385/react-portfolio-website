@@ -31,6 +31,7 @@
       width: 40px;
       height: 40px;
       margin: 0 0.7rem;
+      transition: transform 0.5s ease-in-out;
     }
 
     p {
@@ -39,11 +40,29 @@
 
     a {
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 1000;
+      transition: font-size 0.5s ease-in-out;
     }
 
     &:hover {
       box-shadow: 0 0 10px #d13f4d;
+      
+      a {
+        font-size: 16px;
+      }
+
+      img{
+        transform: scale(1.2);
+      }
+    }
+
+    &:not(:hover) {
+     img{
+      transition: transform 0.5s ease-in-out;
+    }
+    a {
+      transition: font-size 0.5s ease-in-out;
+    }
     }
 
     @media screen and (max-width: 450px) {
@@ -113,6 +132,8 @@
     cursor: pointer;
     background-color: #fff;
     color: #000;
+    transition: color 0.5s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 
     &:hover {
       background-color: var(--secondary-color);

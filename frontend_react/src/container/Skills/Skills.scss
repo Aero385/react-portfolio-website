@@ -47,15 +47,29 @@
 
     border-radius: 50%;
     background-color: #fff;
+    box-shadow: none; /* set initial box-shadow to none */
+    transition: box-shadow 0.5s ease-in-out; 
 
     img {
       width: 50%;
       height: 50%;
+      transition: transform 0.5s ease-in-out;
     }
 
     &:hover {
-      box-shadow: 0 0 25px rgb(29, 7, 230);
+      box-shadow: 0 0 10px rgb(29, 7, 230);
+
+      img{
+        transform: scale(1.2);
+      }
     }
+
+    &:not(:hover) {
+      transition: box-shadow 0.5s ease-in-out;
+     img{
+      transition: transform 0.5s ease-in-out;
+    }
+  }
 
     
     @media screen and (min-width: 2000px) {

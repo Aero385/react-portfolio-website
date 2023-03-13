@@ -45,9 +45,11 @@ import about from '../assets/about.png';
 import work from '../assets/work.png';
 import skills from '../assets/skills.svg';
 import contact from '../assets/contact.png';
+import bubble from '../assets/bubble.png';
 
 
 export default {
+  bubble,
   home,
   about,
   work,
