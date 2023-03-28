@@ -39,8 +39,20 @@ const Header = () => {
           className='app__header-img'
         />
       </div>
+       <motion.div
+        variants={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className="app__header-circles"
+      >
+        {[images.html, images.css ,images.javascript, images.react, images.git, images.api, images.redux, images.sass, images.typescript].map((circle, index) => (
+          <div className='circle-cmp app__flex' key={`circle-${index}`}>
+            <img src={circle} alt='circle'/>
+          </div>
+        ))}
+      </motion.div> 
     </div>
   );
 }
 
 export default AppWrap(Header, 'home');
+
