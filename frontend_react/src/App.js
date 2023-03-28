@@ -21,7 +21,7 @@ const App = () => {
       <About id='about' />
       <Work id='work' />
       <Skills id='skills' />
-      <Footer />
+      <Footer id='contact'/>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 #home {
+  z-index: 0;
   position: relative;
   background: url('../../assets/bgIMG.png');
   background-size: cover;
@@ -18,92 +19,69 @@
   flex: 1;
   width: 100%;
   height: 100%;
-  flex-direction: row;
   position: relative;
-  padding: 8rem 2rem 0;
+  padding: 0 2rem ;
+  gap: 10rem;
+  
 
   @media screen and (min-width: 2000px) {
     padding-top: 1rem;
   }
   @media screen and (max-width: 1200px) {
     flex-direction: column;
+    gap: 5rem;
   }
   @media screen and (min-width: 450px) {
     padding-top: 6rem 1rem 2rem;
   }
 }
 
-// .app__header-info {
-//   flex: 0.65;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   align-items: flex-start;
-//   height: 100%;
-//   position: absolute;
+.app__header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  max-width: 40rem;
+  z-index: 1;
+  flex: 1;
 
-//   @media screen and (max-width: 2000px) {
-//     width: 100%;
-//     margin-right: 0rem;
+  @media screen and (max-width: 2000px) {
+    width: 100%;
+    margin-right: 0rem;
     
-//   }
-// }
-
-.app__header-badge {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  display: inline-flex;
-
-  .header-static-txt {
-    font-size: 60px;
-    color: #000;
-    font-weight: 400;
   }
+}
+.app__header-img {
+  background-image: url('/assets/St1.png');
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  border: 3px solid #2d2e32;
+  border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  height: 20rem;
+  transition: all 1s ease-in-out;
+  width: 20rem;
+  animation: morph 8s ease-in-out infinite;
+}
 
-  .header-dynamic-txt {
-    list-style: none;
-    font-size: 60px;
-    font-weight: 500;
-    color:blue;
-    margin-left: 1rem;
-
-    li span {
-
-      position: relative;
-    
-      &::after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 200%;
-        border-left: 2px solid blue;
-        background-color: var(--primary-color);
-        left: 0;
-        animation: typing 1.5s steps(10) infinite;
-      }
-      @keyframes typing {
-        100%{
-          left: 100%;
-          margin: 0 35px 0 35px;
-        }
-      }
-
-    }
+@media (max-width: 500px) {
+  .app__header-img {
+    height: 14rem;
+    width: 14rem;
   }
+}
 
-  // span {
-  //   font-size: 2.5rem;
-
-  //   @media screen and ( min-width: 2000px) {
-  //     font-size: 5rem;
-  //   }
-      
-  // }
-
-  @media screen and (max-width: 1200px) {
-    justify-content: flex-start;
-    align-items: flex-start;
+@keyframes morph {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  to {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
   }
 }
 
@@ -120,15 +98,15 @@
 
   div {
     width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-image: url('../../assets/bubble.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  animation: bubble 10s linear;
-  opacity: 0;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url('../../assets/bubble.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    animation: bubble 10s linear;
+    opacity: 0;
 
 
     img {
@@ -253,38 +231,3 @@
   }
 
 }
-
-.app__header-img {
-  flex: 1;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  position: relative;
-
-
-  img {
-    z-index: 2;
-    width: 30%;
-    object-fit: contain;
-
-    @media screen and (max-width: 1200px) {
-      width: 60%;
-    }
-  }
-
-  .overlay_circle {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 90%;
-    z-index: 0;
-  }
-
-  @media screen and (max-width: 1200px) {
-    align-items: center;
-  }
-    
-  }

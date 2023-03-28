@@ -3,6 +3,9 @@ import {motion} from 'framer-motion';
 import { images } from '../../constants';
 import { AppWrap } from '../../wrapper/AppWrap';
 import './Header.scss';
+import { FcBinoculars } from 'react-icons/fc';
+import Map from '../../components/Map/Map';
+import Skills from '../Skills/Skills';
 
 const scaleVariants = {
   whileInView: {
@@ -18,46 +21,24 @@ const scaleVariants = {
 const Header = () => {
 
   return (
-    <div className='app__header app__flex'>
-      <motion.div
-        whileInView={{x: [-100, 0], opacity: [0, 1]}}
-        transition={{duration: 0.5}}
-        className='app__header-info'
-      >
-        <div className='app__header-badge'>
-          <div className='header-static-txt'>Hello, I am </div>
-          <ul className='header-dynamic-txt'>
-            <li><span>Stanislav</span></li>
-            <li><span>Developer</span></li>
-            <li><span>Freelancer</span></li>
-          </ul>
-        </div>
-      </motion.div>
-      <motion.div
-        whileInView={{ opacity: [0, 1]}}
-        transition={{duration: 0.5, delayChildren: 0.5}}
-        className='app__header-img'
-      >
-        <img src={images.St1}  alt='profile_bg'/>
-        <motion.img
-          whileInView={{ scale: [0, 1]}}
-          transition={{duration: 1, ease: 'easeInOut'}}
-          className='overlay_circle'
-          src={images.circle}
-          alt='profile-circle'
-        />
-      </motion.div>
-      <motion.div
-        variants={scaleVariants}
-        whileInView={scaleVariants.whileInView}
-        className="app__header-circles"
-      >
-        {[images.html, images.css ,images.javascript, images.react, images.git, images.api, images.redux, images.sass, images.typescript].map((circle, index) => (
-          <div className='circle-cmp app__flex' key={`circle-${index}`}>
-            <img src={circle} alt='circle'/>
+    <div className=' main app__flex'>
+      <div className='app__header app__flex'>
+        <motion.div
+          whileInView={{x: [-100, 0], opacity: [0, 1]}}
+          transition={{duration: 0.5}}
+          className='app__header-info'
+        >
+          <div className='app__header-badge'>
+            <h1>Hello</h1>
+            <div className='header-static-txt'>Hi, I'm <span>Stanislav Prokofjev</span>, a passionate frontend web developer from Tallinn, Estonia <a href='#contact'><FcBinoculars/></a>.
+            <br/>I specialize in using modern technologies  to create engaging and responsive websites that deliver an exceptional user experience.</div>
           </div>
-        ))}
-      </motion.div>
+        </motion.div>
+        <motion.div
+          whileInView={{ opacity: [0, 1]}}
+          className='app__header-img'
+        />
+      </div>
     </div>
   );
 }

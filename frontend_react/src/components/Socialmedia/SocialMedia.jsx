@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import VanillaTilt from 'vanilla-tilt';
+import './SocialMedia.scss';
 
 export const SocialMedia = () => {
   const linkedinRef = useRef(null);

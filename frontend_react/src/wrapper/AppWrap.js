@@ -1,5 +1,6 @@
 import React from 'react';
-import {  SocialMedia } from '../components';
+import SocialMedia from '../components/Socialmedia/SocialMedia';
+
 
 export const AppWrap = (Component, idName, classNames) => function HOC() {
   return (
