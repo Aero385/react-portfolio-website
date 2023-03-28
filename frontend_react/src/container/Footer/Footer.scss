@@ -1,16 +1,43 @@
-.app__footer {
-  flex: 1;
+.footer {
   width: 100%;
+  height: 100%;
+}
+
+.footer_head-text {
+
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+}
+
+.right-side {
+  width: 50rem;
+  flex:1;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.left-side {
+  width: 500px;
+  flex: 1;
+  display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .app__footer-cards {
-  width: 60%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  width: 100%;
   flex-wrap: wrap;
-  margin: 4rem 2rem 2rem;
+  margin-top: 2rem;
+  gap: 10rem;
+
+  @media screen and (max-width: 768px) {
+    gap: 0;
+    
+  }
 
   .app__footer-card {
     min-width:  290px;
@@ -25,13 +52,10 @@
     border-radius: 10px;
     background-color: #fef4f5;
 
-    transition: all 0.3s ease-in-out;
-
     img {
       width: 40px;
       height: 40px;
       margin: 0 0.7rem;
-      transition: transform 0.5s ease-in-out;
     }
 
     p {
@@ -41,32 +65,16 @@
     a {
       text-decoration: none;
       font-weight: 1000;
-      transition: font-size 0.5s ease-in-out;
     }
 
     &:hover {
       box-shadow: 0 0 10px #d13f4d;
-      
-      a {
-        font-size: 16px;
-      }
-
-      img{
-        transform: scale(1.2);
-      }
     }
 
-    &:not(:hover) {
-     img{
-      transition: transform 0.5s ease-in-out;
-    }
-    a {
-      transition: font-size 0.5s ease-in-out;
-    }
-    }
+   
 
     @media screen and (max-width: 450px) {
-      width: 100%;
+      width: 20%;
     }
   }
 

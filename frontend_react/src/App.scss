@@ -1,6 +1,8 @@
 .app {
+  overflow-x: hidden; 
   background-color: var(--primary-color);
   font-family: var(--font-base);
+  
 }
 
 .app__whitebg {
@@ -14,9 +16,15 @@
 .app__container {
   width: 100%;
   min-height: 100vh;
+  padding-right: 100px;
 
   display: flex;
   flex-direction: row;
+
+  @media screen and (max-width: 450px) {
+    padding-right: 0;
+  }
+
 }
 
 .app__flex {
@@ -29,7 +37,7 @@
   flex: 1;
   width: 100%;
   flex-direction: column;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 0;
 
   @media screen and (max-width: 450px) {
     padding: 4rem 1rem 2rem;
@@ -45,13 +53,16 @@
 }
 
 .copyright {
-  width: 100%;
   padding: 2rem 0 0;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+
+  @media screen and (max-width: 450px) {
+    width: 450px;
+  }
 
   p {
     text-transform: uppercase;
@@ -105,7 +116,11 @@
   }
 }
 
-.app__social {
+.app__social-mobile {
+  display: none;
+}
+
+.app__social{
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -198,7 +213,44 @@
     display: none;
   }
 
+  .app__social-mobile {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  a {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    margin: 20px;
+    font-size: 1.5em;
+    box-shadow: 0 25px 35px rgb(0, 0, 0, 0.1);
+
+    .fa{
+      transform: scale(1.5)
+
+    }
+
+    .fa-facebook {
+      color: #1316d1;
+    }
+
+    .fa-linkedin-square{
+      color: #1d67f0;
+    }
+
+      color: #e4405f;
+    }
+  }
+}
+
   .copyright {
     padding: 2rem;
   }
-}

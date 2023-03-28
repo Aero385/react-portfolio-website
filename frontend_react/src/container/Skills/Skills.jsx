@@ -10,17 +10,17 @@ import './Skills.scss';
 
 const Skills = () => {
 
-  const [experience, setExperience] = useState([])
+  // const [experience, setExperience] = useState([])
   const [skills, setSkills] = useState([])
 
   useEffect(() => {
-    const query = '*[_type == "experiences"]';
+    // const query = '*[_type == "experiences"]';
     const skillsQuery = '*[_type == "skills"]';
 
-    client.fetch(query)
-      .then((data) => {
-        setExperience(data);
-      })
+    // client.fetch(query)
+    //   .then((data) => {
+    //     setExperience(data);
+    //   })
 
     client.fetch(skillsQuery)
       .then((data) => {
@@ -31,7 +31,7 @@ const Skills = () => {
 
   return (
     <>
-      <h2 className='head-text'>Skills & experience</h2>
+      <h2 className='head-text'>Skills & Tech Stack</h2>
       <div className='app__skills-container'>
         <motion.div className='app__skills-list'>
           {skills?.map((skill) => (
@@ -48,7 +48,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div className='app__skills-exp'>
+        {/* <motion.div className='app__skills-exp'>
             {experience?.map((experience) => (
               <motion.div
                 className='app__skills-exp-item'
@@ -86,7 +86,7 @@ const Skills = () => {
                 </motion.div>
               </motion.div>
             ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </>
   );
